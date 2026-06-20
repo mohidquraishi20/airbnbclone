@@ -4,7 +4,6 @@ import { Globe2, Menu, Search, SlidersHorizontal, UserRound, X, Moon, Sun } from
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isNavOpen, setIsNavOpen] = useState(false);
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   useEffect(() => {
@@ -39,18 +38,7 @@ export default function Header() {
           <span className="hidden text-xl font-bold sm:inline">airbnb</span>
         </a>
 
-        <button
-          className="icon-button inline-flex md:hidden"
-          aria-label={isNavOpen ? "Close navigation menu" : "Open navigation menu"}
-          onClick={() => setIsNavOpen((open) => !open)}
-        >
-          {isNavOpen ? <X size={18} /> : <Menu size={18} />}
-        </button>
-
-        <nav
-          className={`items-center gap-8 text-sm font-semibold text-airbnb-ink dark:text-slate-100 md:flex ${isNavOpen ? "flex flex-col gap-4 bg-white p-4 shadow-lg dark:bg-slate-950 md:flex-row md:bg-transparent md:p-0 md:shadow-none" : "hidden"}`}
-          aria-label="Primary"
-        >
+        <nav className="hidden items-center gap-8 text-sm font-semibold text-airbnb-ink md:flex dark:text-slate-100" aria-label="Primary">
           <a href="#stays" className="hover:text-airbnb-coral">
             Stays
           </a>
@@ -95,7 +83,7 @@ export default function Header() {
       <div
         className={`page-shell overflow-hidden transition-all duration-300 ${
           isScrolled && !isSearchOpen ? "max-h-0 opacity-0 pb-0" : "max-h-[520px] md:max-h-[260px] opacity-100 pb-4"
-        } ${isNavOpen ? "max-h-[520px]" : ""}`}
+        }`}
       >
         <form className="mx-auto grid max-w-4xl grid-cols-1 overflow-hidden rounded-3xl border border-neutral-200 bg-white shadow-search md:grid-cols-[1.4fr_1fr_1fr_auto] dark:border-slate-800 dark:bg-slate-900">
           <label className="border-b border-neutral-200 px-6 py-4 md:border-b-0 md:border-r dark:border-slate-800">
