@@ -3,7 +3,7 @@ import { experiences } from "../data/listings";
 
 export default function Experiences() {
   return (
-    <section id="experiences" className="bg-airbnb-soft py-12">
+    <section id="experiences" className="bg-airbnb-soft py-12 dark:bg-slate-950">
       <div className="page-shell">
         <div className="mb-7 flex flex-col justify-between gap-3 sm:flex-row sm:items-end">
           <div>
@@ -18,11 +18,11 @@ export default function Experiences() {
 
         <div className="grid gap-5 md:grid-cols-3">
           {experiences.map((experience) => (
-            <article key={experience.id} className="overflow-hidden rounded-2xl bg-white shadow-card">
+            <article key={experience.id} className="overflow-hidden rounded-2xl bg-white shadow-card dark:bg-slate-900">
               <img className="h-56 w-full object-cover" src={experience.image} alt={experience.title} loading="lazy" />
               <div className="p-5">
-                <h3 className="text-lg font-bold">{experience.title}</h3>
-                <p className="mt-2 text-sm leading-6 text-airbnb-muted">{experience.copy}</p>
+                <h3 className="text-lg font-bold text-airbnb-ink dark:text-slate-100">{experience.title}</h3>
+                <p className="mt-2 text-sm leading-6 text-airbnb-muted dark:text-slate-400">{experience.copy}</p>
               </div>
             </article>
           ))}

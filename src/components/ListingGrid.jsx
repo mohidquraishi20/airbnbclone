@@ -9,7 +9,7 @@ export default function ListingGrid() {
           <p className="text-sm font-bold uppercase tracking-normal text-airbnb-coral">Popular homes</p>
           <h2 className="section-title mt-2">Fresh places to stay</h2>
         </div>
-        <p className="max-w-xl text-sm leading-6 text-airbnb-muted">
+        <p className="max-w-xl text-sm leading-6 text-airbnb-muted dark:text-slate-400">
           Each card is rendered from reusable listing data, making the homepage easy to extend with API results later.
         </p>
       </div>
